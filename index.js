@@ -11,7 +11,7 @@ const questions = [
   "How can one contribute to this project? ",
   "Specify any tests (leave blank if none): ",
   "Frequently asked Questions: ",
-  "Select a license"
+  "Select a license",
 ];
 const varNames = [
   "projectName",
@@ -44,7 +44,12 @@ function getQuestionArray() {
 }
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fileSystem.writeFile(fileName, JSON.stringify(data, null, "\t"), (err) => {
+    if (err) console.error(err);
+    else console.log(`${fileName} saved successfully`);
+  });
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -54,6 +59,7 @@ function init() {
     .prompt(getQuestionArray())
     .then((res) => {
       console.log(res);
+      writeToFile("README.md", res);
     })
     .catch((err) => {
       console.error(err);
