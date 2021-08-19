@@ -1,6 +1,7 @@
 const nosyReporter = require("inquirer");
 const fileSystem = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const { assert } = require("console");
 
 const questions = [
   "Project name: ",
@@ -10,6 +11,7 @@ const questions = [
   "How can one contribute to this project? ",
   "Specify any tests (leave blank if none): ",
   "Frequently asked Questions: ",
+  "Select a license"
 ];
 const varNames = [
   "projectName",
@@ -19,7 +21,10 @@ const varNames = [
   "contributing",
   "tests",
   "faq",
+  "license",
 ];
+
+const licenses = ["Apache", "MIT", "BSD3", "BSD2", "GPL3", "GPL2"];
 
 function getQuestionArray() {
   const ret = [];
@@ -30,7 +35,7 @@ function getQuestionArray() {
     };
     if (index == varNames.length - 1) {
       frag["type"] = "list";
-      frag["choices"] = [3, 4, 6];
+      frag["choices"] = licenses.slice();
     } else frag["type"] = "input";
     ret.push(frag);
   });
@@ -43,6 +48,8 @@ function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
+  for (license of licenses)
+    assert(generateMarkdown.renderLicenseBadge(license) != "");
   nosyReporter
     .prompt(getQuestionArray())
     .then((res) => {
@@ -51,7 +58,6 @@ function init() {
     .catch((err) => {
       console.error(err);
     });
-  getQuestionArray();
 }
 
 // Function call to initialize app
