@@ -43,7 +43,6 @@ function getQuestionArray() {
   return ret;
 }
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fileSystem.writeFile(fileName, JSON.stringify(data, null, "\t"), (err) => {
     if (err) console.error(err);
@@ -51,7 +50,6 @@ function writeToFile(fileName, data) {
   });
 }
 
-// TODO: Create a function to initialize app
 function init() {
   for (license of licenses)
     assert(generateMarkdown.renderLicenseBadge(license) != "");
