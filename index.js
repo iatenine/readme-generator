@@ -40,7 +40,6 @@ function getQuestionArray() {
       case "license":
         frag["type"] = "list";
         frag["choices"] = licenses.slice();
-        frag["default"] = "MIT";
         break;
     }
     if (varNames[index] === "license") {
