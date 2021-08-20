@@ -28,14 +28,22 @@ const licenses = ["Apache", "MIT", "BSD3", "BSD2", "GPL3", "GPL2"];
 
 function getQuestionArray() {
   const ret = [];
+  // Adds standard stuff to each element
   questions.map((elem, index) => {
     const frag = {
       message: elem,
       name: varNames[index],
     };
-    if (index == varNames.length - 1) {
-      frag["type"] = "list";
-      frag["choices"] = licenses.slice();
+
+    // Specify name of variables that need specialized input
+    switch (varNames[index]) {
+      case "license":
+        frag["type"] = "list";
+        frag["choices"] = licenses.slice();
+        frag["default"] = "MIT";
+        break;
+    }
+    if (varNames[index] === "license") {
     } else frag["type"] = "input";
     ret.push(frag);
   });
@@ -51,13 +59,14 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-  for (license of licenses)
+  for (license of licenses) {
     assert(generateMarkdown.renderLicenseBadge(license) != "");
+  }
   nosyReporter
     .prompt(getQuestionArray())
     .then((res) => {
       console.log(res);
-      writeToFile("README.md", res);
+      // writeToFile("README.md", res);
     })
     .catch((err) => {
       console.error(err);

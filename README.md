@@ -1,10 +1,10 @@
 {
-	"projectName": "fd",
-	"description": "afaf",
-	"installation": "fds",
-	"usage": "afaf",
-	"contributing": "fdsf",
-	"tests": "fds",
-	"faq": "fs",
-	"license": "Apache"
+	"projectName": "f",
+	"description": "f",
+	"installation": "f",
+	"usage": "f",
+	"contributing": "f",
+	"tests": "f",
+	"faq": "f",
+	"license": "BSD3"
 }

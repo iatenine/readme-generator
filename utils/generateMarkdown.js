@@ -1,38 +1,54 @@
-const licenses = {
-  Apache: {
-    name: "Apache 2.0 License",
-    badge:
-      "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
-  },
-  BSD3: {
-    name: "BSD 3-Clause License",
-    badge:
-      "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
-  },
-  BSD2: {
-    name: "BSD 2-Clause License",
-    badge:
-      "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)",
-  },
-  MIT: {
-    name: "The MIT License",
-    badge:
-      "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-  },
-  GPL3: {
-    name: "GNU GPL v3",
-    badge:
-      "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
-  },
-  GPL2: {
-    name: "GNU GPL v2",
-    badge:
-      "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)",
-  },
-};
+const licenses = [];
+
+function OpenSourceLicense(shortName, name, badge, link) {
+  this.shortName = shortName;
+  this.name = name;
+  this.badge = `[![License](https://img.shields.io/badge/License-${badge})](${link})`;
+  this.link = link;
+  licenses.push(this);
+}
+
+const Apache = new OpenSourceLicense(
+  "Apache",
+  "Apache 2.0 License",
+  "Apache%202.0-blue.svg",
+  "https://opensource.org/licenses/Apache-2.0"
+);
+const BSD3 = new OpenSourceLicense(
+  "BSD3",
+  "BSD 3-Clause License",
+  "BSD%203--Clause-blue.svg",
+  "https://opensource.org/licenses/BSD-3-Clause"
+);
+const BSD2 = new OpenSourceLicense(
+  "BSD2",
+  "BSD 2-Clause License",
+  "BSD%202--Clause-orange.svg",
+  "https://opensource.org/licenses/BSD-2-Clause"
+);
+const MIT = new OpenSourceLicense(
+  "MIT",
+  "The MIT License",
+  "MIT-yellow.svg",
+  "https://opensource.org/licenses/MIT"
+);
+const GPL3 = new OpenSourceLicense(
+  "GPL3",
+  "GNU GPL v3",
+  "GPLv3-blue.svg",
+  "https://www.gnu.org/licenses/gpl-3.0"
+);
+const GPL2 = new OpenSourceLicense(
+  "GPL2",
+  "GNU GPL v2",
+  "GPL%20v2-blue.svg",
+  "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
+);
+
+console.log("licenses: ", licenses);
 
 function renderLicenseBadge(license) {
-  if (licenses[license].badge) return licenses[license].badge;
+  for (entry of licenses) if (entry.shortName === license) return entry.badge;
   return "";
 }
 
