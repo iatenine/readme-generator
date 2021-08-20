@@ -65,8 +65,8 @@ function init() {
   nosyReporter
     .prompt(getQuestionArray())
     .then((res) => {
-      console.log(markdownUtils.generateMarkdown(res));
-      // writeToFile("README.md", res);
+      // console.log(markdownUtils.generateMarkdown(res));
+      writeToFile("README.md", markdownUtils.generateMarkdown(res));
     })
     .catch((err) => {
       console.error(err);
