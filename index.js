@@ -52,16 +52,23 @@ function getQuestionArray() {
 }
 
 function writeToFile(fileName, data) {
-  fileSystem.writeFile(fileName, JSON.stringify(data, null, "\t"), (err) => {
+  fileSystem.writeFile(fileName, data, (err) => {
     if (err) console.error(err);
     else console.log(`${fileName} saved successfully`);
   });
 }
 
-function init() {
+function tests() {
   for (license of licenses) {
-    assert(markdownUtils.renderLicenseBadge(license) != "");
+    assert(
+      markdownUtils.renderLicenseBadge(license) != "",
+      `License: ${license} is not defined in generateMarkdown`
+    );
   }
+}
+
+function init() {
+  tests();
   nosyReporter
     .prompt(getQuestionArray())
     .then((res) => {

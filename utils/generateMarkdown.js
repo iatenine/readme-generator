@@ -1,4 +1,5 @@
 const licenses = [];
+const { assert } = require("console");
 
 function OpenSourceLicense(shortName, name, badge, link) {
   this.shortName = shortName;
@@ -45,7 +46,7 @@ const GPL2 = new OpenSourceLicense(
   "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
 );
 
-console.log("licenses: ", licenses);
+assert(licenses.length === 6, "license array is not expected length");
 
 function renderLicenseBadge(license) {
   for (entry of licenses) if (entry.shortName === license) return entry.badge;
