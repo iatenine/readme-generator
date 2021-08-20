@@ -45,9 +45,23 @@ function getQuestionArray() {
         frag["type"] = "list";
         frag["choices"] = licenses.slice();
         break;
+      case "questions":
+        frag["type"] = "editor";
+        break;
+      case "description":
+        frag["type"] = "editor";
+        break;
+      case "usage":
+        frag["type"] = "editor";
+        break;
+      case "contributing":
+        frag["type"] = "editor";
+        break;
+      case "installation":
+        frag["type"] = "editor";
+        break;
     }
-    if (varNames[index] === "license") {
-    } else frag["type"] = "input";
+    // input is default type
     ret.push(frag);
   });
 
@@ -76,7 +90,7 @@ function init() {
     .prompt(getQuestionArray())
     .then((res) => {
       // console.log(markdownUtils.generateMarkdown(res));
-      writeToFile("README.md", markdownUtils.generateMarkdown(res));
+      writeToFile("README-test.md", markdownUtils.generateMarkdown(res));
     })
     .catch((err) => {
       console.error(err);
