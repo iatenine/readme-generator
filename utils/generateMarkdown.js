@@ -109,6 +109,8 @@ ${data.tests}
 
 # Questions
 ${data.questions}
+[Maintainer](https://github.com/${data.github})  
+For further questions, direct emails [here](mailto:${data.email})
 
 ${renderLicenseSection(data.license)}
 `;

@@ -11,6 +11,8 @@ const questions = [
   "How can one contribute to this project? ",
   "Specify any tests (leave blank if none): ",
   "Frequently asked Questions: ",
+  "Enter your Github username: ",
+  "Enter your email: ",
   "Select a license",
 ];
 const varNames = [
@@ -21,6 +23,8 @@ const varNames = [
   "contributing",
   "tests",
   "questions",
+  "github",
+  "email",
   "license",
 ];
 
