@@ -1,6 +1,6 @@
 const nosyReporter = require("inquirer");
 const fileSystem = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const markdownUtils = require("./utils/generateMarkdown");
 const { assert } = require("console");
 
 const questions = [
@@ -14,13 +14,13 @@ const questions = [
   "Select a license",
 ];
 const varNames = [
-  "projectName",
+  "title",
   "description",
   "installation",
   "usage",
   "contributing",
   "tests",
-  "faq",
+  "questions",
   "license",
 ];
 
@@ -60,12 +60,12 @@ function writeToFile(fileName, data) {
 
 function init() {
   for (license of licenses) {
-    assert(generateMarkdown.renderLicenseBadge(license) != "");
+    assert(markdownUtils.renderLicenseBadge(license) != "");
   }
   nosyReporter
     .prompt(getQuestionArray())
     .then((res) => {
-      console.log(res);
+      console.log(markdownUtils.generateMarkdown(res));
       // writeToFile("README.md", res);
     })
     .catch((err) => {

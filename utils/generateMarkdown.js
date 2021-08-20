@@ -54,7 +54,10 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  for (entry of licenses) if (entry.shortName === license) return entry.link;
+  return "";
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -63,11 +66,41 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+${renderLicenseBadge(data.license)}
 
+# Table of Contents
+Description
+Installation
+Usage
+Contributing
+Tests
+Questions
+${data.license}
+
+# Description
+${data.description}
+
+# Installation
+${data.installation}
+
+# Usage
+${data.usage}
+
+# Contributing
+${data.contributing}
+
+# Tests
+${data.tests}
+
+# Questions
+${data.questions}
+
+${renderLicenseSection(data.license)}
 `;
 }
 
 module.exports = {
   generateMarkdown,
   renderLicenseBadge,
+  renderLicenseLink,
 };
