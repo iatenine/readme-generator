@@ -9,19 +9,19 @@ function OpenSourceLicense(shortName, name, badge, link) {
   licenses.push(this);
 }
 
-const Apache = new OpenSourceLicense(
+new OpenSourceLicense(
   "Apache",
   "Apache 2.0 License",
   "Apache%202.0-blue.svg",
   "https://opensource.org/licenses/Apache-2.0"
 );
-const BSD3 = new OpenSourceLicense(
+new OpenSourceLicense(
   "BSD3",
   "BSD 3-Clause License",
   "BSD%203--Clause-blue.svg",
   "https://opensource.org/licenses/BSD-3-Clause"
 );
-const BSD2 = new OpenSourceLicense(
+new OpenSourceLicense(
   "BSD2",
   "BSD 2-Clause License",
   "BSD%202--Clause-orange.svg",
