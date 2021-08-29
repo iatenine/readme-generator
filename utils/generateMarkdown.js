@@ -90,7 +90,7 @@ ${renderLicenseBadge(data.license)}
 [Contributing](#contributing)  
 [Tests](#tests)  
 [Questions](#questions)  
-${data.license != "" ? `[${data.license}](#license)  ` : ""}
+${data.license != "" ? `[License](#license)  ` : ""}
 
 # Description
 ${data.description}
