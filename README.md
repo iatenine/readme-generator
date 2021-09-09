@@ -1,4 +1,4 @@
-# Definitely Not a Todo App
+# E-Commerce Backend
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Table of Contents
@@ -11,23 +11,37 @@
 [License](#license)  
 
 # Description
-This is a Note Taker App. NOTE TAKER. Not Todo app, you take notes of things and they are saved. When you've done them they get deleted, until then they are to-be-dones 
+The following project creates a typical e-commerce backend with a MySql database and column definitions that may be typical among an online store.
+
+Using an express server, API endpoints are exposed that would allow a user to create, read, update and delete objects from the database as well
+as organize items into categories
+
 
 
 # Installation
-No installation necessary, the deployed app can be viewed [here](https://fierce-oasis-86189.herokuapp.com/)
+After cloning repo, navigate to the 'db' directory where a schema.sql file exits. Open SQL Shell and run:  
+```source schema.sql```  
+
+This will create the database needed but not the tables  
+
+Run  
+```npm i```  
+to install dependencies  
+
+If you'd like to use seed data run  
+```npm run seed```
+
+With the database now situated, run  
+```npm run start```
 
 
 # Usage
-Enter a value for both the title and body of a new note and a save icon will appear in the corner  
-
-You can press the save icon to commit the note to the database, the plus icon to clear the entry or delete to remove an entry  
-
-All saved notes will appear in the left-hand column, clicking them will show the body of that note in a non-editable state
+This project is meant to be used purely on the backend, exposing common CRUD API endpoints for a
+typical e-commerce store and querying a database accordingly. The seed data can be ignored and tables
+used differently as per the needs of a project
 
 
 # Contributing
-
 To contribute to this project:
 
 - Find or open an issue related to a bug or desired feature
