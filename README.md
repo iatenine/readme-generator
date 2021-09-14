@@ -42,6 +42,8 @@ or
 to be prompted for a series of questions regarding your project  
 Once done, a README will be generated in the output directory
 
+[Video Walkthrough](https://drive.google.com/file/d/1gwUp_OVWRSARaUFnHAGXVzXjR3MKFxN0/view?usp=sharing)
+
 Note: If a README already exists in output, it will be overwritten
 
 # Contributing
@@ -52,6 +54,10 @@ To contribute to this project:
 - Create a fork of the repo
 - Make changes within the fork to address the issue
 - Create a PR if you feel improvements have been made over the current iteration
+
+# Tests
+
+(None)
 
 # Questions
 
