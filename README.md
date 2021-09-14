@@ -1,4 +1,4 @@
-# E-Commerce Backend
+# README Generator
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Table of Contents
@@ -11,34 +11,34 @@
 [License](#license)  
 
 # Description
-The following project creates a typical e-commerce backend with a MySql database and column definitions that may be typical among an online store.
-
-Using an express server, API endpoints are exposed that would allow a user to create, read, update and delete objects from the database as well
-as organize items into categories
-
+This project provides a CLI application using Node JS to generate professional  
+grade README documents based on a user's input based on a series of prompts
 
 
 # Installation
-After cloning repo, navigate to the 'db' directory where a schema.sql file exits. Open SQL Shell and run:  
-```source schema.sql```  
+After cloning into the repo, simply run:  
 
-This will create the database needed but not the tables  
+```npm install```  
 
-Run  
-```npm i```  
-to install dependencies  
+or  
 
-If you'd like to use seed data run  
-```npm run seed```
+```yarn```  
 
-With the database now situated, run  
-```npm run start```
+to install
 
 
 # Usage
-This project is meant to be used purely on the backend, exposing common CRUD API endpoints for a
-typical e-commerce store and querying a database accordingly. The seed data can be ignored and tables
-used differently as per the needs of a project
+In a terminal, navigate to this program and run:  
+
+```npm run start```  
+
+or  
+
+```yarn start```  
+
+to be prompted for a series of questions regarding your project  
+Once done, the default README will have its contents replaced with  
+contents based on the input
 
 
 # Contributing
