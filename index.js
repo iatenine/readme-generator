@@ -90,7 +90,7 @@ function init() {
     .prompt(getQuestionArray())
     .then((res) => {
       // console.log(markdownUtils.generateMarkdown(res));
-      writeToFile("README.md", markdownUtils.generateMarkdown(res));
+      writeToFile("output/README.md", markdownUtils.generateMarkdown(res));
     })
     .catch((err) => {
       console.error(err);
